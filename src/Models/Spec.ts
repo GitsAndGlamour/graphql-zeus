@@ -4,6 +4,15 @@ export enum ScalarTypes {
   ID = 'ID',
   Int = 'Int',
   String = 'String',
+  AWSDate = 'AWSDate',
+  AWSTime = 'AWSTime',
+  AWSDateTime = 'AWSDateTime',
+  AWSTimestamp = 'AWSTimestamp',
+  AWSEmail = 'AWSEmail',
+  AWSJSON = 'AWSJSON',
+  AWSURL = 'AWSURL',
+  AWSPhone = 'AWSPhone',
+  AWSIPAddress = 'AWSIPAddress'
 }
 
 export enum Directive {
