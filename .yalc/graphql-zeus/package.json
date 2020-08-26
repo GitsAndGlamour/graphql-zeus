@@ -1,0 +1,52 @@
+{
+  "name": "graphql-zeus",
+  "version": "2.6.6+f3cac9a2",
+  "private": false,
+  "license": "MIT",
+  "description": "Generate Client Libary for GraphQL Schema",
+  "homepage": "https://graphqleditor.com",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "zeus": "lib/CLI/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc --watch",
+    "test": "jest",
+    "examples-generate": "npm run generate-typescript-node-big-schema && npm run generate-typescript-node && npm run generate-javascript-node && npm run generate-javascript-node-custom-schema && npm run generate-typescript-node-custom-schema",
+    "generate-javascript-node": "zeus https://faker.graphqleditor.com/a-team/olympus/graphql examples/javascript-node/src --n",
+    "generate-javascript-node-custom-schema": "zeus https://faker.graphqleditor.com/a-team/custom-operations/graphql examples/javascript-node-custom-schema/src --n",
+    "generate-typescript-node": "zeus https://faker.graphqleditor.com/a-team/olympus/graphql examples/typescript-node/src --ts --n -g examples/typescript-node/zeus.graphql",
+    "generate-typescript-node-custom-schema": "zeus https://faker.graphqleditor.com/a-team/custom-operations/graphql examples/typescript-node-custom-schema/src --ts --n -g examples/typescript-node-custom-schema/zeus.graphql",
+    "generate-typescript-node-big-schema": "zeus https://project-api.graphqleditor.com/graphql examples/typescript-node-big-schema/src --ts --n -g examples/typescript-node-big-schema/",
+    "run-example-typescript-node": "./run-example.sh examples/typescript-node",
+    "run-example-typescript-node-big-schema": "./run-example.sh examples/typescript-node-big-schema",
+    "run-example-typescript-node-custom-schema": "./run-example.sh examples/typescript-node-custom-schema",
+    "run-example-javascript-node": "./run-example.sh examples/javascript-node",
+    "run-example-javascript-node-custom-schema": "./run-example.sh examples/javascript-node-custom-schema",
+    "lint": "tsc  && eslint \"./src/**/*.{ts,js}\" --quiet --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/graphql-editor/graphql-zeus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/graphql-editor/graphql-zeus.git"
+  },
+  "dependencies": {
+    "cross-fetch": "^3.0.4",
+    "graphql": "^14.0.2",
+    "yargs": "^15.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}

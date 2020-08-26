@@ -12,7 +12,7 @@ export enum ScalarTypes {
   AWSJSON = 'AWSJSON',
   AWSURL = 'AWSURL',
   AWSPhone = 'AWSPhone',
-  AWSIPAddress = 'AWSIPAddress'
+  AWSIPAddress = 'AWSIPAddress',
 }
 
 export enum Directive {
